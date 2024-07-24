@@ -23,7 +23,7 @@ public class Salon_Login {
     public void login() {
 
         WebElement email = driver.findElement(By.name("email"));
-        email.sendKeys("lanka+1000@thesanmark.com");
+        email.sendKeys("lanka+68@thesanmark.com");
         WebElement password = driver.findElement(By.name("password"));
         password.sendKeys("Lanka123#");
         WebElement loginButton = driver.findElement(By.xpath("//button[normalize-space()='Login']"));
@@ -45,25 +45,30 @@ public class Salon_Login {
         searchInput.submit();
 
         driver.findElement(By.xpath("(//a)[18]")).click();
-        //WebElement review = driver.findElement(By.xpath("(//textarea[@name='review'])[1]"));
 
-        WebElement review = driver.findElement(By.xpath("//textarea[@name='review'])[1]"));
-        if (review.isDisplayed()) {
-            review.sendKeys("sooo good");
-            driver.findElement(By.xpath("(//button[normalize-space()='Submit'])[1]")).click();
-
-            WebElement actualText2 = driver.findElement(By.xpath("(//p[normalize-space()='Rating is placed successfully'])[1]"));
-            String expectedText2 = "Rating is placed successfully";
-            if (actualText2.getText().equals(expectedText2)) { //this also can write as actualTitle.equals(expexctedTitle)
-                System.out.println("Pass");
-            } else {
-                System.out.println("fail");
-            }
-            driver.findElement(By.xpath("(//button[normalize-space()='OK'])[1]")).click();
-        }
-        else if (!driver.findElement(By.xpath("(//textarea[@name='review'])[1]")).isDisplayed()) {
+        /*if(driver.findElement(By.xpath("//div[@class='text-danger']")).isDisplayed()) {
             System.out.println("aleady reviewed");
         }
+        else{
+            System.out.println("Nooo");
+        }
+
+        else {
+            WebElement review = driver.findElement(By.xpath("//textarea[@name='review'])[1]"));
+            if (review.isDisplayed()) {
+                review.sendKeys("sooo good");
+                driver.findElement(By.xpath("(//button[normalize-space()='Submit'])[1]")).click();
+
+                WebElement actualText2 = driver.findElement(By.xpath("(//p[normalize-space()='Rating is placed successfully'])[1]"));
+                String expectedText2 = "Rating is placed successfully";
+                if (actualText2.getText().equals(expectedText2)) { //this also can write as actualTitle.equals(expexctedTitle)
+                    System.out.println("Pass");
+                } else {
+                    System.out.println("fail");
+                }
+                driver.findElement(By.xpath("(//button[normalize-space()='OK'])[1]")).click();
+            }
+        }*/
     }
 }
 
